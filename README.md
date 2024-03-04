@@ -148,3 +148,11 @@ Create a Jenkins webhook
 - Navigate to "Manage Jenkins" → "Manage Plugins."
 - Click on the "Available" tab and search for "OWASP Dependency-Check."
 - Check the checkbox for "OWASP Dependency-Check" and click on the "Install without restart" button.
+
+**Configure Dependency-Check Tool:**
+
+- After installing the Dependency-Check plugin, you need to configure the tool.
+- Go to "Dashboard" → "Manage Jenkins" → "Global Tool Configuration."
+- Find the section for "OWASP Dependency-Check."
+- Add the tool's name, e.g., "DP-Check."
+- Save your settings.
