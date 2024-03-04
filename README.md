@@ -584,3 +584,86 @@ You should now have a Grafana dashboard set up to visualize metrics from Prometh
 Grafana is a powerful tool for creating visualizations and dashboards, and you can further customize it to suit your specific monitoring needs.
 
 That's it! You've successfully installed and set up Grafana to work with Prometheus for monitoring and visualization.
+
+2. **Configure Prometheus Plugin Integration:**
+    - Integrate Jenkins with Prometheus to monitor the CI/CD pipeline.
+
+### **Phase 5: Notification**
+
+1. **Implement Notification Services:**
+    - Set up email notifications in Jenkins or other notification mechanisms.
+
+# Phase 6: Kubernetes
+
+## Create Kubernetes Cluster with Nodegroups
+
+In this phase, you'll set up a Kubernetes cluster with node groups. This will provide a scalable environment to deploy and manage your applications.
+
+## Monitor Kubernetes with Prometheus
+
+Prometheus is a powerful monitoring and alerting toolkit, and you'll use it to monitor your Kubernetes cluster. Additionally, you'll install the node exporter using Helm to collect metrics from your cluster nodes.
+
+### Install Node Exporter using Helm
+
+To begin monitoring your Kubernetes cluster, you'll install the Prometheus Node Exporter. This component allows you to collect system-level metrics from your cluster nodes. Here are the steps to install the Node Exporter using Helm:
+
+1. Add the Prometheus Community Helm repository:
+
+```bash
+    helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+
+2. Create a Kubernetes namespace for the Node Exporter:
+
+```bash
+    kubectl create namespace prometheus-node-exporter
+```
+
+3. Install the Node Exporter using Helm:
+
+```bash
+    helm install prometheus-node-exporter prometheus-community/prometheus-node-exporter --namespace prometheus-node-exporter
+```
+
+Add a Job to Scrape Metrics on nodeip:9001/metrics in prometheus.yml:
+
+Update your Prometheus configuration (prometheus.yml) to add a new job for scraping metrics from nodeip:9001/metrics. You can do this by adding the following configuration to your prometheus.yml file:
+
+
+```yml
+  - job_name: 'Netflix'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['node1Ip:9100']
+```
+
+Replace 'your-job-name' with a descriptive name for your job. The static_configs section specifies the targets to scrape metrics from, and in this case, it's set to nodeip:9001.
+
+Don't forget to reload or restart Prometheus to apply these changes to your configuration.
+
+To deploy an application with ArgoCD, you can follow these steps, which I'll outline in Markdown format:
+
+### Deploy Application with ArgoCD
+
+1. **Install ArgoCD:**
+
+   You can install ArgoCD on your Kubernetes cluster by following the instructions provided in the [EKS Workshop](https://archive.eksworkshop.com/intermediate/290_argocd/install/) documentation.
+
+2. **Set Your GitHub Repository as a Source:**
+
+   After installing ArgoCD, you need to set up your GitHub repository as a source for your application deployment. This typically involves configuring the connection to your repository and defining the source for your ArgoCD application. The specific steps will depend on your setup and requirements.
+
+3. **Create an ArgoCD Application:**
+   - `name`: Set the name for your application.
+   - `destination`: Define the destination where your application should be deployed.
+   - `project`: Specify the project the application belongs to.
+   - `source`: Set the source of your application, including the GitHub repository URL, revision, and the path to the application within the repository.
+   - `syncPolicy`: Configure the sync policy, including automatic syncing, pruning, and self-healing.
+
+4. **Access your Application**
+   - To Access the app make sure port 30007 is open in your security group and then open a new tab paste your NodeIP:30007, your app should be running.
+
+**Phase 7: Cleanup**
+
+1. **Cleanup AWS EC2 Instances:**
+    - Terminate AWS EC2 instances that are no longer needed.
