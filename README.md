@@ -44,14 +44,14 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
 
 - Build and run the application using Docker container
 
-    ```bash
+```bash
     docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
     docker run -d --name netflix -p 8081:80 netflix:latest
     
     #to delete
     #docker stop <containerid>
     #docker rmi -f netflix
-    ```
+```
 ### **Phase 2: Security**
 
 1. **Install SonarQube and Trivy:**
@@ -60,10 +60,10 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
         
 - To run sonarqube container
 
-        ```bash
-        docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
-        ```        
-        To access sonarqube: <EC2_pulic_ip>:9000 (by default username & password is admin)
+```bash
+    docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+```        
+To access sonarqube: <EC2_pulic_ip>:9000 (by default username & password is admin)
 
 - To install Trivy. 
 ```bash
@@ -77,13 +77,13 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
     - Integrate SonarQube with your CI/CD pipeline.
     - Configure SonarQube to analyze code for quality and security issues.
 
-**Phase 3: CI/CD Setup**
+### **Phase 3: CI/CD Setup**
 
 1. **Install Jenkins for Automation:**
     - Install Jenkins on the EC2 instance to automate deployment:
     Install Java
     
-    ```bash
+```bash
     sudo apt update
     sudo apt install fontconfig openjdk-17-jre
     java -version
@@ -101,5 +101,19 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
     sudo apt-get install jenkins
     sudo systemctl start jenkins
     sudo systemctl enable jenkins
-    ```
- 
+```
+- Access Jenkins in a web browser using the public IP of your EC2 instance. (At port 8080) e.g., `http://<ec2-public-ip>:8080`
+
+2. **Install Necessary Plugins in Jenkins:**
+
+Goto Manage Jenkins →Plugins → Available Plugins →
+
+Install below plugins
+
+1 Eclipse Temurin Installer (Install without restart)
+
+2 SonarQube Scanner (Install without restart)
+
+3 NodeJs Plugin (Install Without restart)
+
+4 Email Extension Plugin
