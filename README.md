@@ -156,3 +156,16 @@ Create a Jenkins webhook
 - Find the section for "OWASP Dependency-Check."
 - Add the tool's name, e.g., "DP-Check."
 - Save your settings.
+
+**Install Docker Tools and Docker Plugins:**
+
+- Go to "Dashboard" in your Jenkins web interface.
+- Navigate to "Manage Jenkins" → "Manage Plugins."
+- Click on the "Available" tab and search for "Docker."
+- Check the following Docker-related plugins:
+  - Docker
+  - Docker Commons
+  - Docker Pipeline
+  - Docker API
+  - docker-build-step
+- Click on the "Install without restart" button to install these plugins.
