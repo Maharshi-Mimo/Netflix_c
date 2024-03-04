@@ -58,13 +58,11 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
 
 - Install SonarQube and Trivy on the EC2 instance to scan for vulnerabilities.
         
-        sonarqube
+- sonarqube
         ```bash
         docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
         ```        
-        To access: 
-        
-        <EC2_pulic_ip>:9000 (by default username & password is admin)
+        To access sonarqube: <EC2_pulic_ip>:9000 (by default username & password is admin)
 
 - To install Trivy. 
  ```bash
@@ -74,3 +72,6 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
         sudo apt-get update
         sudo a
  ```
+2. **Integrate SonarQube and Configure:**
+    - Integrate SonarQube with your CI/CD pipeline.
+    - Configure SonarQube to analyze code for quality and security issues.
