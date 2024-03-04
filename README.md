@@ -52,3 +52,25 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
     #docker stop <containerid>
     #docker rmi -f netflix
     ```
+### **Phase 2: Security**
+
+1. **Install SonarQube and Trivy:**
+
+- Install SonarQube and Trivy on the EC2 instance to scan for vulnerabilities.
+        
+        sonarqube
+        ```bash
+        docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+        ```        
+        To access: 
+        
+        <EC2_pulic_ip>:9000 (by default username & password is admin)
+
+- To install Trivy. 
+ ```bash
+        sudo apt-get install wget apt-transport-https gnupg lsb-release
+        wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+        echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+        sudo apt-get update
+        sudo a
+ ```
