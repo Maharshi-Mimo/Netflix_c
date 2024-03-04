@@ -560,3 +560,27 @@ To visualize metrics, you need to add a data source. Follow these steps:
 - In the "HTTP" section:
   - Set the "URL" to `http://localhost:9090` (assuming Prometheus is running on the same server).
   - Click the "Save & Test" button to ensure the data source is working.
+
+**Step 10: Import a Dashboard:**
+
+To make it easier to view metrics, you can import a pre-configured dashboard. Follow these steps:
+
+- Click on the "+" (plus) icon in the left sidebar to open the "Create" menu.
+
+- Select "Dashboard."
+
+- Click on the "Import" dashboard option.
+
+- Enter the dashboard code you want to import (e.g., code 1860).
+
+- Click the "Load" button.
+
+- Select the data source you added (Prometheus) from the dropdown.
+
+- Click on the "Import" button.
+
+You should now have a Grafana dashboard set up to visualize metrics from Prometheus.
+
+Grafana is a powerful tool for creating visualizations and dashboards, and you can further customize it to suit your specific monitoring needs.
+
+That's it! You've successfully installed and set up Grafana to work with Prometheus for monitoring and visualization.
