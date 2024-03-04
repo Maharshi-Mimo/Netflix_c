@@ -213,7 +213,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/Maharshi-Mimo/Netflix_c.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -252,20 +252,20 @@ pipeline{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                        sh "docker build --build-arg TMDB_V3_API_KEY=<yourapikey> -t netflix ."
-                       sh "docker tag netflix nasi101/netflix:latest "
-                       sh "docker push nasi101/netflix:latest "
+                       sh "docker tag netflix maharshimimo/netflix:latest "
+                       sh "docker push maharshimimo/netflix:latest "
                     }
                 }
             }
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image nasi101/netflix:latest > trivyimage.txt" 
+                sh "trivy image maharshimimo/netflix:latest > trivyimage.txt" 
             }
         }
         stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name netflix -p 8081:80 nasi101/netflix:latest'
+                sh 'docker run -d --name netflix -p 8081:80 maharshimimo/netflix:latest'
             }
         }
     }
@@ -422,3 +422,48 @@ pipeline{
    sudo systemctl status node_exporter
 ```
 - You can access Node Exporter metrics in Prometheus. 
+
+ **Configure Prometheus Plugin Integration:**
+
+- Integrate Jenkins with Prometheus to monitor the CI/CD pipeline.
+
+   **Prometheus Configuration:**
+
+   To configure Prometheus to scrape metrics from Node Exporter and Jenkins, you need to modify the `prometheus.yml` file. Here is an example `prometheus.yml` configuration for your setup:
+
+```bash 
+cd /etc/prometheus
+``` 
+
+```yaml
+   global:
+     scrape_interval: 15s
+
+   scrape_configs:
+     - job_name: 'node_exporter'
+       static_configs:
+         - targets: ['localhost:9100']
+
+     - job_name: 'jenkins'
+       metrics_path: '/prometheus'
+       static_configs:
+         - targets: ['<your-jenkins-ip>:<your-jenkins-port>']
+```
+
+- Make sure to replace `<your-jenkins-ip>` and `<your-jenkins-port>` with the appropriate values for your Jenkins setup.
+
+- Check the validity of the configuration file:
+
+```bash
+   promtool check config /etc/prometheus/prometheus.yml
+```
+
+-   Reload the Prometheus configuration without restarting:
+
+```bash
+   curl -X POST http://localhost:9090/-/reload
+```
+
+   You can access Prometheus targets at:
+
+   `http://<your-prometheus-ip>:9090/targets`
