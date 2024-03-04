@@ -434,6 +434,11 @@ pipeline{
 ```bash 
 cd /etc/prometheus
 ``` 
+- Open the prometheus .yml file using a text editor (e.g., nano or vim). A
+``` bash 
+sudo nano prometheus.yml" 
+```
+- Add following lines at the end of `prometheus.yml` file:
 
 ```yaml
    global:
@@ -467,3 +472,63 @@ cd /etc/prometheus
    You can access Prometheus targets at:
 
    `http://<your-prometheus-ip>:9090/targets`
+
+### **Installing Grafana:**
+
+**Install Grafana on Ubuntu 22.04 and Set it up to Work with Prometheus**
+
+**Step 1: Install Dependencies:**
+
+First, ensure that all necessary dependencies are installed:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y apt-transport-https software-properties-common
+```
+
+**Step 2: Add the GPG Key:**
+
+Add the GPG key for Grafana:
+
+```bash
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+```
+
+**Step 3: Add Grafana Repository:**
+
+Add the repository for Grafana stable releases:
+
+```bash
+echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+```
+
+**Step 4: Update and Install Grafana:**
+
+Update the package list and install Grafana:
+
+```bash
+sudo apt-get update
+sudo apt-get -y install grafana
+```
+
+**Step 5: Enable and Start Grafana Service:**
+
+To automatically start Grafana after a reboot, enable the service:
+
+```bash
+sudo systemctl enable grafana-server
+```
+
+Then, start Grafana:
+
+```bash
+sudo systemctl start grafana-server
+```
+
+**Step 6: Check Grafana Status:**
+
+Verify the status of the Grafana service to ensure it's running correctly:
+
+```bash
+sudo systemctl status grafana-server
+```
