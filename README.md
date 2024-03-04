@@ -139,3 +139,12 @@ Click on Apply and Save
 We will install a sonar scanner in the tools.
 
 Create a Jenkins webhook
+
+**Install Dependency-Check and Docker Tools in Jenkins**
+
+**Install Dependency-Check Plugin:**
+
+- Go to "Dashboard" in your Jenkins web interface.
+- Navigate to "Manage Jenkins" → "Manage Plugins."
+- Click on the "Available" tab and search for "OWASP Dependency-Check."
+- Check the checkbox for "OWASP Dependency-Check" and click on the "Install without restart" button.
