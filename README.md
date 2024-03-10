@@ -12,6 +12,7 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
 <br> 
 <p> Home Page of the Project </p>
 </div>
+
 # Deploy Netflix Clone on Cloud
 
 ### **Phase 1: Initial Setup and Deployment**
