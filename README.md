@@ -4,6 +4,13 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
 [Home-page](/public/assets/home-page.png)
 <div align = "center">
 <img src= "./public/assets/Architecture.png" alt = "Architecture" title = "Architecture" width ="100%" height="100%"/> 
+<p> Architure of the Project </p>
+</div>
+
+<div align = "center">
+<img src="./public/assets/home-page.png"  width=100% height=100% alt = "Home Page" title = "Home Page" />
+<br> 
+<p> Home Page of the Project </p>
 </div>
 # Deploy Netflix Clone on Cloud
 
