@@ -15,9 +15,9 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
 - Update all the packages and then clone the code.
 - Clone your application's code repository onto the EC2 instance:
     
-    ```bash
+```bash
     git clone https://github.com/Maharshi-Mimo/Netflix_c.git
-    ```
+```
 
 **Step 3: Get the API Key:**
 
