@@ -283,11 +283,13 @@ pipeline{
 }
 
 ```
+<!-- 
 <div align = "center">
-<img src= "./public/assets/Jenkins_pipeline.png"  width=100% height=100% alt = "Jenkins Pipeline" title = "Jenkins Pipeline" />
+<img src= "/public/assets/Jenkins_pipeline.png"  width=100% height=100% alt = "Jenkins Pipeline" title = "Jenkins Pipeline" />
 <br> 
 <p> Pipeline </p>
-</div>
+</div> -->
+
 ### **Phase 4: Monitoring**
 
 - Provision an EC2 instance on AWS with Ubuntu 22.04.
