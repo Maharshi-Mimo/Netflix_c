@@ -284,7 +284,7 @@ pipeline{
 
 ```
 <div align = "center">
-<img src="./public/assets/Jenkins_pipeline.png"  width=100% height=100% alt = "Jenkins Pipeline" title = "Jenkins Pipeline" />
+<img src= "./public/assets/Jenkins_pipeline.png"  width=100% height=100% alt = "Jenkins Pipeline" title = "Jenkins Pipeline" />
 <br> 
 <p> Pipeline </p>
 </div>
