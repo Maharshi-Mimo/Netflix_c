@@ -598,6 +598,12 @@ To make it easier to view metrics, you can import a pre-configured dashboard. Fo
 
 You should now have a Grafana dashboard set up to visualize metrics from Prometheus.
 
+<div align = "center">
+<img src= "/public/assets/Grafana_dash_node_exporter.png"  width=100% height=100% alt = "Grafana Dashboard" title = "Grafana Dashboard" />
+<br> 
+<p> Grafana Dashboard of Nodes </p>
+</div>
+
 Grafana is a powerful tool for creating visualizations and dashboards, and you can further customize it to suit your specific monitoring needs.
 
 That's it! You've successfully installed and set up Grafana to work with Prometheus for monitoring and visualization.
