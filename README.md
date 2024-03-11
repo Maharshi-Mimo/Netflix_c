@@ -606,6 +606,12 @@ You should now have a Grafana dashboard set up to visualize metrics from Prometh
 
 Grafana is a powerful tool for creating visualizations and dashboards, and you can further customize it to suit your specific monitoring needs.
 
+<div align = "center">
+<img src= "/public/assets/Grafana_dash_jenkins.png"  width=100% height=100% alt = "Grafana Dashboard" title = "Grafana Dashboard: Jenkins" />
+<br> 
+<p> Grafana Dashboard of Jenkins </p>
+</div>
+
 That's it! You've successfully installed and set up Grafana to work with Prometheus for monitoring and visualization.
 
 2. **Configure Prometheus Plugin Integration:**
