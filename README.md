@@ -20,7 +20,7 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
 
 - Provision an EC2 instance on AWS with Ubuntu 22.04.
 - 30 GB EBS volume
-- Open port 80, 8080, 9000
+- Open port 80, 8080, 9000, and 8081 for the application
 - Connect to the instance using SSH.
 
 **Step 2: Clone the Code:**
@@ -296,6 +296,7 @@ pipeline{
 
 - Provision an EC2 instance on AWS with Ubuntu 22.04.
 - With 20 GB of storage space.
+- Open port 9090 (prometheus), and 3000 (for Grafana)
 - Connect to the instance using SSH
 
 **Installing Prometheus:**
