@@ -19,6 +19,8 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
 **Step 1: Launch EC2 (Ubuntu 22.04):**
 
 - Provision an EC2 instance on AWS with Ubuntu 22.04.
+- 30 GB EBS volume
+- Open port 80, 8080, 9000
 - Connect to the instance using SSH.
 
 **Step 2: Clone the Code:**
