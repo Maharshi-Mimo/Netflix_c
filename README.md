@@ -34,7 +34,7 @@ This project is a simple clone of the Netflix.com page. The motivation behind th
 
 **Step 3: Get the API Key:**
 
-- Open a web browser and navigate to [TMDB](https://github.com/Maharshi-Mimo/Netflix_c.git) (The Movie Database) website.
+- Open a web browser and navigate to [TMDB](https://www.themoviedb.org/) (The Movie Database) website.
 - Click on "Login" and create an account.
 - Once logged in, go to your profile and select "Settings."
 - Click on "API" from the left-side panel.
